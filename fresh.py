@@ -9,7 +9,7 @@ import sqlite3
 
 def get_submissions(reddit):
     # Get new submissions
-    submissions = [sub for sub in reddit.subreddit('hiphopheads').top('year', limit=5000)]
+    submissions = [sub for sub in reddit.subreddit('hiphopheads').top('day', limit=25)]
     # Filter 'FRESH'
     submissions = [sub for sub in submissions if 'FRESH' in sub.title]
     # Filter score
@@ -28,12 +28,14 @@ def format_submission(submission):
 
 def update_database(c, submissions):
     ids = set(row[0] for row in c.execute('SELECT id FROM submissions'))
-    print('existing entries: ' + str(len(ids)))
+    print('before update: %d entries' % len(ids))
     for sub in submissions:
         if sub['id'] in ids:
             c.execute('UPDATE submissions SET score = ? WHERE id = ?', (sub['score'], sub['id']))
         else:
             c.execute('INSERT INTO submissions VALUES (?,?,?,?,?)', (sub['id'], sub['title'], sub['url'], sub['date'], sub['score']))
+    ids = set(row[0] for row in c.execute('SELECT id FROM submissions'))
+    print('after update: %d entries' % len(ids))
 
 def generate_page(submissions):
     doc, tag, text = Doc().tagtext()
@@ -95,11 +97,11 @@ if __name__ == '__main__':
                      #(id TEXT PRIMARY KEY, title TEXT, url TEXT, date TEXT, score INTEGER)''')
 
     # Get fresh submissions
-    #submissions = get_submissions(reddit)
+    submissions = get_submissions(reddit)
 
     # Update database
-    #update_database(c, submissions)
-    #conn.commit()
+    update_database(c, submissions)
+    conn.commit()
 
     # Generate HTML
     submissions = [row for row in c.execute('SELECT * FROM submissions ORDER BY date DESC, score DESC')]
