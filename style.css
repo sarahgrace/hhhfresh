@@ -2,43 +2,58 @@
     font-family: 'Open Sans', sans-serif;
     background-color: #DCD0C0;
     color: #373737;
+    text-align: center;
     font-size: 1em;
 }
 a {
     color: #96858F;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:visited {
+    color: #9099A2;
 }
 table {
-    border: 1px solid black;
     width: 100%;
 }
 th {
-    border: 1px solid black;
+    border-top: 1px;
+    border-top-style: solid;
+    border-top-color: black;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
     padding: 10px;
-    text-align: center;
     font-size: 1.25em;
 }
 td {
-    border: 1px solid black;
-    padding: 2px 5px 2px 5px;
-    text-align: left;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    padding: 5px 5px 5px 5px;
 }
 h1 {
     font-size: 2em;
     padding: 0px;
-    text-align: center;
 }
 h3 {
     font-size: 1.25em;
     padding: 0px;
-    text-align: center;
 }
 #datecol {
-    width: 5em;
+    width: 7em;
 }
 #titlecol {
-    width: 30em;
+    width: 25em;
 }
 #scorecol {
-    width: 3em;
+    width: 5em;
 }
-
+#titlecell {
+    text-align:left;
+    padding: 0px 10px 0px 10px;
+}

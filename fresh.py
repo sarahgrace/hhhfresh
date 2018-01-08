@@ -66,7 +66,7 @@ def generate_page(submissions):
                     with tag('tr'):
                         with tag('td'):
                             text(format_date(sub[3]))
-                        with tag('td'):
+                        with tag('td', id='titlecell'):
                             with tag('a', href=sub[2]):
                                 text(sub[1])
                         with tag('td'):
