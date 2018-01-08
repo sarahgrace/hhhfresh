@@ -1,0 +1,42 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #7e9a9a;
+}
+a {
+    color: #2a6592;
+}
+table {
+    border: 1px solid black;
+    width: 100%;
+}
+th {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.25em;
+}
+td {
+    border: 1px solid black;
+    padding: 2px 5px 2px 5px;
+    text-align: left;
+}
+h1 {
+    font-size: 2em;
+    padding: 0px;
+    text-align: center;
+}
+h3 {
+    font-size: 1.25em;
+    padding: 0px;
+    text-align: center;
+}
+#datecol {
+    width: 5em;
+}
+#titlecol {
+    width: 30em;
+}
+#scorecol {
+    width: 3em;
+}
+

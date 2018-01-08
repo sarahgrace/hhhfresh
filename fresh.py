@@ -44,19 +44,26 @@ def generate_page(submissions):
             with tag('title'):
                 text('hhhfresh')
             doc.stag('link', rel='stylesheet', href='style.css')
+            doc.stag('link', rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans')
         with tag('body'):
+            with tag('h1'):
+                text('Welcome to hhhfresh')
+            with tag('h3'):
+                text('Fresh submissions pulled from ')
+                with tag('a', href='www.reddit.com/r/hiphopheads'):
+                    text('r/hiphophheads')
             with tag('table'):
                 with tag('tr'):
-                    with tag('th'):
+                    with tag('th', id='datecol'):
                         text('Date')
-                    with tag('th'):
+                    with tag('th', id='titlecol'):
                         text('Title')
-                    with tag('th'):
+                    with tag('th', id='scorecol'):
                         text('Score')
                 for sub in submissions:
                     with tag('tr'):
                         with tag('td'):
-                            text(sub[3])
+                            text(format_date(sub[3]))
                         with tag('td'):
                             with tag('a', href=sub[2]):
                                 text(sub[1])
@@ -65,6 +72,11 @@ def generate_page(submissions):
 
     with open('index.html', 'w') as f:
         f.write(doc.getvalue())
+
+def format_date(date):
+    abbr = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+    month = abbr[int(date[5:7])]
+    return '%s. %s, %s' % (month, date[8:], date[:4])
 
 if __name__ == '__main__':
     # Authenticate reddit user
