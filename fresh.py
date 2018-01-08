@@ -13,7 +13,7 @@ def get_submissions(reddit):
     # Filter 'FRESH'
     submissions = [sub for sub in submissions if 'FRESH' in sub.title]
     # Filter score
-    submissions = [sub for sub in submissions if sub.score >= 250]
+    submissions = [sub for sub in submissions if sub.score >= 500]
     # Return submissions
     return [format_submission(sub) for sub in submissions]
 
