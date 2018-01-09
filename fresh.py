@@ -52,7 +52,7 @@ def generate_page(submissions):
                 text('Welcome to hhhfresh')
             with tag('h3'):
                 text('Fresh submissions pulled from ')
-                with tag('a', href='www.reddit.com/r/hiphopheads'):
+                with tag('a', href='https://www.reddit.com/r/hiphopheads'):
                     text('r/hiphophheads')
             with tag('table'):
                 with tag('tr'):
@@ -81,6 +81,9 @@ def format_date(date):
     return '%s. %s, %s' % (month, date[8:], date[:4])
 
 if __name__ == '__main__':
+    # Print date and time
+    print('TIME: %s' % str(datetime.now()))
+
     # Authenticate reddit user
     reddit = praw.Reddit(client_id='mnDkhx_goM32iQ',
         client_secret=os.environ['SECRET'],
@@ -109,3 +112,6 @@ if __name__ == '__main__':
 
     # Close connection
     conn.close()
+
+    # Print done
+    print('Done.\n')
