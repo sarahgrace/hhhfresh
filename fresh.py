@@ -41,6 +41,13 @@ def generate_page(submissions):
     doc, tag, text = Doc().tagtext()
     doc.asis('<!DOCTYPE html>')
 
+    '''
+    <a title="Web Analytics Made Easy - StatCounter"
+    href="http://statcounter.com/" target="_blank"><img
+    src="//c.statcounter.com/11596056/0/e29090d6/1/" alt="Web
+    Analytics Made Easy - StatCounter" ></a>
+    '''
+
     with tag('html'):
         with tag('head'):
             with tag('title'):
@@ -54,6 +61,9 @@ def generate_page(submissions):
                 text('Fresh submissions pulled from ')
                 with tag('a', href='https://www.reddit.com/r/hiphopheads'):
                     text('r/hiphophheads')
+                with tag('a', title='StatCounter', href='http://statcounter.com/'):
+                    with tag('img', src='https://c.statcounter.com/11596056/0/e29090d6/1/'):
+                        text('')
             with tag('table'):
                 with tag('tr'):
                     with tag('th', id='datecol'):
