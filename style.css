@@ -1,0 +1,59 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #DCD0C0;
+    color: #373737;
+    text-align: center;
+    font-size: 1em;
+}
+a {
+    color: #96858F;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:visited {
+    color: #9099A2;
+}
+table {
+    width: 100%;
+}
+th {
+    border-top: 1px;
+    border-top-style: solid;
+    border-top-color: black;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    padding: 10px;
+    font-size: 1.25em;
+}
+td {
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    padding: 5px 5px 5px 5px;
+}
+h1 {
+    font-size: 2em;
+    padding: 0px;
+}
+h3 {
+    font-size: 1.25em;
+    padding: 0px;
+}
+#datecol {
+    width: 7em;
+}
+#titlecol {
+    width: 25em;
+}
+#scorecol {
+    width: 5em;
+}
+#titlecell {
+    text-align:left;
+    padding: 0px 10px 0px 10px;
+}
