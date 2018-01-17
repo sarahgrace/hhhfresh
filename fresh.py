@@ -9,7 +9,7 @@ import sqlite3
 
 def get_submissions(reddit):
     # Get new submissions
-    submissions = [sub for sub in reddit.subreddit('hiphopheads').top('week', limit=25)]
+    submissions = [sub for sub in reddit.subreddit('hiphopheads').top('day', limit=25)]
     # Filter 'FRESH'
     submissions = [sub for sub in submissions if 'FRESH' in sub.title]
     # Filter score
