@@ -1,6 +1,6 @@
 * {
     font-family: 'Open Sans', sans-serif;
-    background-color: #dddddd;
+    background-color: #eeeeee;
     color: #333333;
     text-align: center;
     font-size: 1em;
@@ -42,6 +42,9 @@ h1 {
 }
 h3 {
     font-size: 1.25em;
+    padding: 0px;
+}
+h5 {
     padding: 0px;
 }
 #datecol {
